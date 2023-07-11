@@ -1,0 +1,27 @@
+// Typography
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../public/fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../public/fonts/Lato/Lato-Bold.ttf');
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../public/fonts/Lato/Lato-Black.ttf');
+}
+
+body {
+    margin: 0;
+    * {
+        font-family: Lato;
+        font-weight: 500;
+    }
+}

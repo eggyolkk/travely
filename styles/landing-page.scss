@@ -1,0 +1,73 @@
+.landing-page-wrapper {
+    background-color: #F9F9F9;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+
+    .logo {
+        margin: 0;
+        color: #D18B7B;
+        font-weight: 800;
+        font-size: 60px;
+    }
+
+    .authentication-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .authentication-form form {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+
+        .label {
+            font-size: 14px;
+            font-weight: 700;
+            color: $text-dark-grey;
+        }
+
+        .input {
+            margin: 5px 0 20px 0;
+            padding: 12px 12px;
+            font-size: 16px;
+            width: 280px;
+            border: 2px solid $border-grey;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: $button-orange;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $button-orange-hover;
+                transition: background-color 0.1s linear;
+            }
+        }
+
+        .switch-method-btn {
+            background: none;
+            border: none;
+            margin-top: 10px;
+            text-decoration: underline;
+            color: $text-dark-grey;
+            font-size: 13px;
+            cursor: pointer;
+
+            &:hover {
+                color: $text-dark-grey-hover;
+                transition: color 0.1s linear;
+            }
+        }
+    }
+}
