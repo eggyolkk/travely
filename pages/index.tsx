@@ -11,10 +11,10 @@ export const revalidate = 0;
 
 export default function Home() {
   const supabase = createClientComponentClient()
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<any>([]);
   const [myName, setMyName] = useState('');
 
-  const handleInput = (event) => {
+  const handleInput = (event: any) => {
     setMyName(event.target.value);
     console.log("myname", myName);
   }
@@ -49,7 +49,7 @@ export default function Home() {
         'postgres_changes',
         { event: '*', schema: 'public', table: 'users' },
         (payload) => {
-          setUsers((users) => [...users, payload.new])
+          setUsers((users: any) => [...users, payload.new])
         }
       )
       .subscribe()
@@ -106,7 +106,7 @@ export default function Home() {
         <div>
           <h1>Hello</h1>
           <h2>Users:</h2>
-          {users.map((user, i) => {
+          {users.map((user: any, i: number) => {
             return (
               <li key={i}>{user.name}</li>
             )
