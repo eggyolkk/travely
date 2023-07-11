@@ -33,14 +33,16 @@ const LoginForm = (props: LoginFormProps) => {
         }
         
         if (error) {
-            console.log(error.message);
             setLoginError(error.message);
         }
     };
 
     return (
         <div className="authentication-form">
+            <h2 className='form-title'>Login</h2>
             <form onSubmit={handleSubmit(formSubmit)}>
+            <span className='error'>{loginError ? `Error: ${loginError}` : ''}</span>
+
                 <label htmlFor="email" className='label'>Email address</label>
                 <input 
                     className='input'
@@ -49,7 +51,7 @@ const LoginForm = (props: LoginFormProps) => {
                     {...register("email", { required: true })}
 
                 />
-                {errors.email && <p className="field-error">Email address is required.</p>}
+                {errors.email && <p className="error">Email address is required.</p>}
 
 
                 <label htmlFor="email" className='label'>Password</label>
@@ -59,13 +61,11 @@ const LoginForm = (props: LoginFormProps) => {
                     placeholder='********'
                     {...register("password", { required: true })}
                 />
-                {errors.password && <p className="field-error">Password is required.</p>}
-
-                <span className='login-error'>{loginError}</span>
+                {errors.password && <p className="error">Password is required.</p>}
 
                 <input className="submit-btn" type="submit" value="Log in" />
                 <button className='switch-method-btn' onClick={() => setShowLogin(false)}>
-                    Don't have an account? Click here to sign up
+                    Don't have an account? <span>Click here to sign up</span>
                 </button>
             </form>
         </div>

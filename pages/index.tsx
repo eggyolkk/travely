@@ -30,7 +30,7 @@ export const LandingPage = () => {
                 {showLogin ?
                     <LoginForm setShowLogin={setShowLogin} />
                 :
-                    <RegisterForm />
+                    <RegisterForm setShowLogin={setShowLogin} />
                 }
             </div>
         </div>
