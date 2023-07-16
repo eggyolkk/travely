@@ -12,6 +12,7 @@ const RegisterForm = (props: LoginFormProps) => {
     const { setShowLogin } = props;
 
     const supabase = createClientComponentClient();
+    const supabaseLogin = createClientComponentClient();
     const [signUpError, setSignUpError] = useState('');
 
     const {
@@ -24,27 +25,26 @@ const RegisterForm = (props: LoginFormProps) => {
     const formData = watch();
     
     const formSubmit: SubmitHandler<FieldValues> = async (data) => {
-        const supbase = createClient(
+        // Have to use createClient() instead of createClientComponentClient() due to account auto-confirmation being enabled
+        const supabase = createClient(
             process.env.NEXT_PUBLIC_SUPABASE_URL!,
             process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
         );
     
-        const {data: signUpData, error} = await supbase.auth.signUp({
+        const {data: signUpData, error} = await supabase.auth.signUp({
             email: data.email,
-            password: data.password,
-            options: {
-                emailRedirectTo: `${location.origin}/home`,
-            },
+            password: data.password
         });
     
+        // If user successfully registers, sign in and redirect to homepage
         if (signUpData.user) {
-            const { data: signInData, error } = await supabase.auth.signInWithPassword({
+            const { data: signInData, error } = await supabaseLogin.auth.signInWithPassword({
                 email: data.email,
                 password: data.password,
             })
     
             if (signInData.user) {
-                Router.replace('/home');
+                Router.push('/home');
             }
         }
 

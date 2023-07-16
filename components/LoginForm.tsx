@@ -28,6 +28,7 @@ const LoginForm = (props: LoginFormProps) => {
             password: data.password,
         })
 
+        // If user successfully signs in, redirect to homepage
         if (signInData.user) {
             Router.replace('/home');
         }

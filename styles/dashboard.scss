@@ -1,0 +1,163 @@
+.main-content-wrapper {
+    width: 100%;
+    padding-left: 250px;
+
+    .dashboard-wrapper {
+        padding: 50px 80px;
+    }
+
+    @media only screen and (max-width: $max-screen-md) {
+        padding: 50px 30px;
+    }
+
+    .title-container {
+        display: flex;
+
+        button {
+            border: none;
+            background: $button-orange;
+            margin-left: 20px;
+            padding: 8px;
+            border-radius: 50px;
+            width: 60px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $button-orange-hover;
+                transition: background-color 0.1s linear;
+            }
+        }
+
+        svg {
+            font-size: 40px;
+            color: white;
+            }
+    }
+
+    h1 {
+        font-weight: 800;
+        font-size: 50px;
+        color: $text-dark-blue; 
+        margin: 0;
+    }
+
+    .welcome-text {
+        font-size: 24px;
+        color: $text-dark-blue; 
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-weight: 800;
+
+        &.active {
+            color: $text-dark-blue;
+            margin-top: 0;
+        }
+    }
+
+    .no-trips-message {
+        color: $no-available-grey;
+    }
+}
+
+// Create trip
+.main-wrapper-create-trip {
+    width: 100%;
+    padding-left: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .create-trip-wrapper {
+        padding: 50px 80px;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 2px;
+            color: $text-dark-blue;
+        }
+    }
+
+    .create-trip-form {
+        margin-top: 10px;
+
+        label {
+            font-weight: 700;
+            color: $text-dark-grey;
+            margin-top: 20px;
+        }
+
+        #destination {
+            font-size: 40px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid $border-grey;
+            padding-bottom: 8px;
+            color: $text-dark-blue;
+            font-weight: 800;
+            margin-bottom: 20px;
+
+            &::placeholder {
+                color: $text-placeholder-grey;
+            }
+        }
+
+        .icon-input-wrapper {
+            width: 100%;
+            position: relative;
+            border-bottom: 2px solid $border-grey;
+            margin: 6px 0;
+
+            svg {
+                position: absolute;
+                color: $text-dark-grey;
+                top: 8px;
+            }
+
+            input {
+                font-size: 16px;
+                background: none;
+                border: none;
+                padding: 12px 0 12px 30px;
+                width: 100%;
+                font-weight: 700;
+                color: $text-dark-blue;
+
+                &::placeholder {
+                    color: $text-placeholder-grey;
+                }
+            }
+        }
+
+        .submit-btn {
+            margin-top: 50px;
+            background-color: $button-orange;
+            padding: 15px 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $button-orange-hover;
+                transition: background-color 0.1s linear;
+            }
+        }
+
+        .cancel-link {
+            text-align: center;
+            margin-top: 5px;
+            color: $text-dark-grey;
+            font-weight: 700;
+            text-underline-offset: 3px;
+
+            &:hover {
+                color: $text-dark-grey-hover;
+            }
+        }
+    }
+}
